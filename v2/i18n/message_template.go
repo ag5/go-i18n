@@ -2,7 +2,6 @@ package i18n
 
 import (
 	"fmt"
-
 	"text/template"
 
 	"github.com/nicksnyder/go-i18n/v2/internal"

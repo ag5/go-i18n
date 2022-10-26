@@ -23,6 +23,7 @@ func TestMain(t *testing.T) {
 			exitCode: 1,
 		},
 	}
+
 	for _, testCase := range testCases {
 		t.Run(strings.Join(testCase.args, " "), func(t *testing.T) {
 			if code := testableMain(testCase.args); code != testCase.exitCode {

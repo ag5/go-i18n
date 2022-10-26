@@ -9,11 +9,14 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strconv"
 	"strings"
 
 	"github.com/nicksnyder/go-i18n/v2/i18n"
 )
+
+var i18nPackagePath = reflect.TypeOf(i18n.Bundle{}).PkgPath()
 
 func usageExtract() {
 	fmt.Fprintf(os.Stderr, `usage: goi18n extract [options] [paths]
@@ -282,7 +285,7 @@ func extractStringLiteral(expr ast.Expr) (string, bool) {
 
 func i18nPackageName(file *ast.File) string {
 	for _, i := range file.Imports {
-		if i.Path.Kind == token.STRING && i.Path.Value == `"github.com/nicksnyder/go-i18n/v2/i18n"` {
+		if i.Path.Kind == token.STRING && i.Path.Value == fmt.Sprintf(`"%s"`, i18nPackagePath) {
 			if i.Name == nil {
 				return "i18n"
 			}
