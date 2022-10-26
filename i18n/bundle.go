@@ -10,7 +10,7 @@ import (
 )
 
 // UnmarshalFunc unmarshals data into v.
-type UnmarshalFunc func(data []byte, v interface{}) error
+type UnmarshalFunc func(data []byte) ([]*Message, error)
 
 // Bundle stores a set of messages and pluralization rules.
 // Most applications only need a single bundle
