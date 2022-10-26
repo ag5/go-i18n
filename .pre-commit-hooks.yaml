@@ -1,0 +1,5 @@
+-   id: go-i18n
+    name: Go i18n
+    entry: goi18n
+    language: golang
+    types: [text]qgiq
