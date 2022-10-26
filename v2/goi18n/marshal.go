@@ -66,7 +66,7 @@ func marshallLokaliseJson(messageTemplates map[string]*i18n.MessageTemplate, sou
 			for pluralForm, tmpl := range template.PluralTemplates {
 				t[string(pluralForm)] = tmpl.Src
 			}
-			m["translations"] = t
+			m["translation"] = t
 		}
 
 		v[id] = m
