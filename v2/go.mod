@@ -8,4 +8,4 @@ require (
 	gopkg.in/yaml.v2 v2.3.0
 )
 
-replace github.com/nicksnyder/go-i18n/v2 => github.com/ag5/go-i18n/v2 v2.0.1
+//replace github.com/nicksnyder/go-i18n/v2 => ./
