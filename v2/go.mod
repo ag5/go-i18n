@@ -1,4 +1,4 @@
-module github.com/nicksnyder/go-i18n/v2
+module github.com/ag5/go-i18n/v2
 
 go 1.18
 
@@ -7,5 +7,3 @@ require (
 	golang.org/x/text v0.3.7
 	gopkg.in/yaml.v2 v2.3.0
 )
-
-//replace github.com/nicksnyder/go-i18n/v2 => ./

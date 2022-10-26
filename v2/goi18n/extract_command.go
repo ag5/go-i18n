@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/nicksnyder/go-i18n/v2/i18n"
+	"github.com/ag5/go-i18n/v2/i18n"
 )
 
 var i18nPackagePath = reflect.TypeOf(i18n.Bundle{}).PkgPath()
