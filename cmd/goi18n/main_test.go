@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestMain(t *testing.T) {
+func TestMainFunc(t *testing.T) {
 	testCases := []struct {
 		args     []string
 		exitCode int

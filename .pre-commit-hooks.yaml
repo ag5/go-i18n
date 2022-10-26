@@ -1,5 +1,8 @@
--   id: go-i18n
-    name: Go i18n
-    entry: goi18n
-    language: golang
-    types: [text]qgiq
+- id: go-i18n
+  name: Go i18n
+  entry: goi18n
+  args: [ "extract", "-format", "lokalise-json", "-outdir", "translations" ]
+  language: golang
+  pass_filenames: false
+  types: [ text ]
+  files: '\.go$'
