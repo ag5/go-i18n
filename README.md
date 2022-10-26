@@ -16,12 +16,12 @@ go-i18n is a Go [package](#package-i18n) and a [command](#command-goi18n) that h
 </strong>
 
 ## Package i18n
-[![GoDoc](https://godoc.org/github.com/ag5/go-i18n?status.svg)](https://godoc.org/github.com/ag5/go-i18n/v2/i18n)
+[![GoDoc](https://godoc.org/github.com/ag5/go-i18n?status.svg)](https://godoc.org/github.com/ag5/go-i18n/i18n)
 
 The i18n package provides support for looking up messages according to a set of locale preferences.
 
 ```go
-import "github.com/ag5/go-i18n/v2/i18n"
+import "github.com/ag5/go-i18n/i18n"
 ```
 
 Create a Bundle to use for the lifetime of your application.
@@ -74,12 +74,12 @@ localizer.Localize(&i18n.LocalizeConfig{
 ```
 
 ## Command goi18n
-[![GoDoc](https://godoc.org/github.com/ag5/go-i18n?status.svg)](https://godoc.org/github.com/ag5/go-i18n/v2/goi18n)
+[![GoDoc](https://godoc.org/github.com/ag5/go-i18n?status.svg)](https://godoc.org/github.com/ag5/go-i18n/goi18n)
 
 The goi18n command manages message files used by the i18n package.
 
 ```
-go get -u github.com/ag5/go-i18n/v2/goi18n
+go get -u github.com/ag5/go-i18n/goi18n
 goi18n -help
 ```
 

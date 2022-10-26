@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/ag5/go-i18n/v2/internal/plural"
+	"github.com/ag5/go-i18n/internal/plural"
 
 	"golang.org/x/text/language"
 )
