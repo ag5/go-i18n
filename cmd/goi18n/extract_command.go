@@ -285,7 +285,7 @@ func extractStringLiteral(expr ast.Expr) (string, bool) {
 
 func i18nPackageName(file *ast.File) string {
 	for _, i := range file.Imports {
-		if i.Path.Kind == token.STRING && i.Path.Value == `"github.com/ag5/go-i18n/v2/i18n"` {
+		if i.Path.Kind == token.STRING && i.Path.Value == `"github.com/ag5/go-i18n/i18n"` {
 			if i.Name == nil {
 				return "i18n"
 			}
