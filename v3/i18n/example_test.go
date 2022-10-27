@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/BurntSushi/toml"
-	"github.com/ag5/go-i18n/i18n"
 	"golang.org/x/text/language"
 )
 

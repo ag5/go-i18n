@@ -1,4 +1,4 @@
-module github.com/ag5/go-i18n
+module github.com/ag5/go-i18n/v3
 
 go 1.18
 

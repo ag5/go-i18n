@@ -8,8 +8,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/BurntSushi/toml"
-	"github.com/ag5/go-i18n/i18n"
+	"github.com/ag5/go-i18n/v3/i18n"
 	"golang.org/x/text/language"
 )
 
@@ -28,7 +27,7 @@ var page = template.Must(template.New("").Parse(`
 
 func main() {
 	bundle := i18n.NewBundle(language.English)
-	bundle.RegisterUnmarshalFunc("toml", toml.Unmarshal)
+	bundle.RegisterUnmarshalFunc("toml", i18n.UnmarshallToml)
 	// No need to load active.en.toml since we are providing default translations.
 	// bundle.MustLoadMessageFile("active.en.toml")
 	bundle.MustLoadMessageFile("active.es.toml")

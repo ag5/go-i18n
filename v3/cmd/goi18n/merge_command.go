@@ -10,9 +10,8 @@ import (
 	"os"
 
 	"github.com/BurntSushi/toml"
-	"github.com/ag5/go-i18n/i18n"
-	"github.com/ag5/go-i18n/internal"
-	"github.com/ag5/go-i18n/internal/plural"
+	"github.com/ag5/go-i18n/v3/internal"
+	"github.com/ag5/go-i18n/v3/internal/plural"
 	"golang.org/x/text/language"
 	yaml "gopkg.in/yaml.v2"
 )
