@@ -21,7 +21,7 @@ go-i18n is a Go [package](#package-i18n) and a [command](#command-goi18n) that h
 The i18n package provides support for looking up messages according to a set of locale preferences.
 
 ```go
-import "github.com/ag5/go-i18n/i18n/v3"
+import "github.com/ag5/go-i18n/v3/i18n"
 ```
 
 Create a Bundle to use for the lifetime of your application.
