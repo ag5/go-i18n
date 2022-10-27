@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/BurntSushi/toml"
+	"gopkg.in/yaml.v2"
 )
 
 func UnmarshallJson(data []byte) ([]*Message, error) {
@@ -22,6 +23,16 @@ func UnmarshallJson(data []byte) ([]*Message, error) {
 func UnmarshallToml(data []byte) ([]*Message, error) {
 	var v interface{}
 	err := toml.Unmarshal(data, &v)
+	if err != nil {
+		return nil, err
+	}
+
+	return recGetMessages(v, isMessage(v), true)
+}
+
+func UnmarshallYaml(data []byte) ([]*Message, error) {
+	var v interface{}
+	err := yaml.Unmarshal(data, &v)
 	if err != nil {
 		return nil, err
 	}

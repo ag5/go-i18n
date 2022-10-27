@@ -2,18 +2,16 @@ package main
 
 import (
 	"crypto/sha1"
-	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
 
-	"github.com/BurntSushi/toml"
+	"github.com/ag5/go-i18n/v3/i18n"
 	"github.com/ag5/go-i18n/v3/internal"
 	"github.com/ag5/go-i18n/v3/internal/plural"
 	"golang.org/x/text/language"
-	yaml "gopkg.in/yaml.v2"
 )
 
 func usageMerge() {
@@ -113,9 +111,9 @@ func merge(messageFiles map[string][]byte, sourceLanguageTag language.Tag, outdi
 	unmerged := make(map[language.Tag][]map[string]*i18n.MessageTemplate)
 	sourceMessageTemplates := make(map[string]*i18n.MessageTemplate)
 	unmarshalFuncs := map[string]i18n.UnmarshalFunc{
-		"json": json.Unmarshal,
-		"toml": toml.Unmarshal,
-		"yaml": yaml.Unmarshal,
+		"json": i18n.UnmarshallJson,
+		"toml": i18n.UnmarshallToml,
+		"yaml": i18n.UnmarshallYaml,
 	}
 	for path, content := range messageFiles {
 		mf, err := i18n.ParseMessageFileBytes(content, path, unmarshalFuncs)
