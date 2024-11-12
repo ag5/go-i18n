@@ -187,4 +187,22 @@ func TestStoreIconLinks(t *testing.T) {
 		assert.Equal(t, loc.AppleStoreIconLink(), iconRes.appleStoreLink, iconRes.tag)
 		assert.Equal(t, loc.GooglePlayStoreIconLink(), iconRes.googlePlayStoreLink, iconRes.tag)
 	}
+
+	// No language should default to English
+	bundle := NewBundle(language.English)
+	loc := NewLocalizer(bundle, "")
+	assert.Equal(t, loc.AppleStoreIconLink(), "https://cdn.ag5.com/mail-assets/mobile/appstore/en.png", "No language set")
+	assert.Equal(t, loc.GooglePlayStoreIconLink(), "https://cdn.ag5.com/mail-assets/mobile/googleplay/en.png", "No language set")
+
+	// No known language should default to English
+	bundle = NewBundle(language.Afrikaans)
+	loc = NewLocalizer(bundle, language.Lao.String(), language.Afrikaans.String())
+	assert.Equal(t, loc.AppleStoreIconLink(), "https://cdn.ag5.com/mail-assets/mobile/appstore/en.png", "Unknown languages set")
+	assert.Equal(t, loc.GooglePlayStoreIconLink(), "https://cdn.ag5.com/mail-assets/mobile/googleplay/en.png", "Unknown languages set")
+
+	// If first language is not defined, then second language should be picked
+	bundle = NewBundle(language.Afrikaans)
+	loc = NewLocalizer(bundle, language.Afrikaans.String(), language.Dutch.String())
+	assert.Equal(t, loc.AppleStoreIconLink(), "https://cdn.ag5.com/mail-assets/mobile/appstore/nl.png", "Second language should be chosen")
+	assert.Equal(t, loc.GooglePlayStoreIconLink(), "https://cdn.ag5.com/mail-assets/mobile/googleplay/nl.png", "Second language should be chosen")
 }
