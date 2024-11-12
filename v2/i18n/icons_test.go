@@ -140,7 +140,7 @@ var expectedResults = []iconResult{
 	},
 	{
 		tag:                 language.Swedish, // sv
-		appleStoreLink:      "https://cdn.ag5.com/mail-assets/mobile/appstore/se.png",
+		appleStoreLink:      "https://cdn.ag5.com/mail-assets/mobile/appstore/sv.png",
 		googlePlayStoreLink: "https://cdn.ag5.com/mail-assets/mobile/googleplay/sv.png",
 	},
 	{
